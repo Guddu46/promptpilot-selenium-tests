@@ -1,6 +1,6 @@
 # Automated test cases
 
-Common preconditions: real local frontend running at the configured base URL; Chrome available; fresh browser with no auth token for every test. All data is dummy. Each validation test clicks the form submit button. No successful form submission or backend response is part of these cases.
+ No successful form submission or backend response is part of these cases.
 
 | ID | Java test method | Steps and data | Expected outcome |
 |---|---|---|---|
@@ -19,4 +19,4 @@ Common preconditions: real local frontend running at the configured base URL; Ch
 | PP-13 | NavigationTest.pricingLinkShowsComingSoonPage | Open `/login`; click `Pricing` | URL `/pricing`; heading `Pricing`; main content includes `Pricing page coming soon...` |
 | PP-14 | NavigationTest.getStartedOpensLogin | Open `/pricing`; click `Get Started` | URL `/login`; heading `Welcome Back` |
 
-Expected messages and boundaries come from the source revision linked in the README. In particular, login accepts a username of at least three characters; applying signup's email rule to login would be an incorrect test expectation. The signup email expression is basic (`/^\S+@\S+$/`), so these tests do not claim comprehensive email validation.
+

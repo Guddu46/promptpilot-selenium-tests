@@ -62,6 +62,7 @@ public class SignupTest extends BaseClass {
         AuthPage page = openSignup();
         page.followLink("Log in");
         wait.until(d -> d.getCurrentUrl().equals(baseUrl + "/login"));
+        page.waitForHeading("Welcome Back");
         Assert.assertEquals(page.heading(), "Welcome Back");
     }
 }

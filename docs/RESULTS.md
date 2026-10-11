@@ -1,5 +1,11 @@
 # Verification results
 
+## Visible Chrome run (current default)
+
+On **11 October 2026, 20:39 IST**, `mvn test` with `headless=false` passed **14 tests, 0 failures, 0 errors, 0 skipped** in visible Chrome. Test duration: 31.97 seconds; Maven total: 35.760 seconds. The environment and application revision match the original run below. The first visible run exposed a React navigation race (13 passed, 1 failed): the URL updated before the heading. Explicit waits for the destination heading were added to both auth-page link tests before the successful full rerun. `execution-summary.csv` now records this visible run. Eclipse and other browsers remain untested.
+
+## Original headless run
+
 Executed on **11 October 2026, 18:34 IST** against the actual local PromptPilot React frontend at application commit `9624e5b0c5089aa3e1ec285d88f188d6d80f5ca4`.
 
 | Check | Actual outcome |
@@ -12,7 +18,7 @@ Executed on **11 October 2026, 18:34 IST** against the actual local PromptPilot 
 | Frontend runtime | Node 22.14.0, npm 10.9.2, Vite 7.3.7 |
 | Backend / API fixtures | Neither used; client validation and public routes only |
 | Paid AI calls / account mutations | None performed |
-| Eclipse execution / headed Chrome / other browsers | Instructions provided; not executed |
+| Eclipse execution / other browsers | Instructions provided; not executed |
 
 The first development run had four failures because the test helper checked `aria-invalid` for password fields. A second attempted correction had six failures because text fields and password fields use different attributes. Inspection of Mantine's implementation and failure screenshots confirmed the messages were visible. The final helper handles both `aria-invalid` (text input) and `data-invalid` (password input), then follows `aria-describedby` to the exact field error. The final clean run passed all cases. No application source change was needed.
 

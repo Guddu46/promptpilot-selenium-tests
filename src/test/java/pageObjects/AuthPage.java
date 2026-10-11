@@ -33,6 +33,10 @@ public class AuthPage {
     public String heading() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2"))).getText();
     }
+    public void waitForHeading(String expectedText) {
+        // React can update the URL before replacing the previous page's heading.
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("h2"), expectedText));
+    }
     public String errorFor(String placeholder) {
         // Mantine connects each input to its error using aria-describedby; generated IDs are not hardcoded.
         WebElement input = driver.findElement(By.cssSelector("input[placeholder='" + placeholder + "']"));

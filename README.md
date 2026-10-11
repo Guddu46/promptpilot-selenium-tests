@@ -21,4 +21,4 @@ docs/RESULTS.md                 what was actually executed
 ```
 
 
-Chrome opens visibly for every test. With the local frontend running, use `mvn test` to watch the tests.
+Use `mvn test` to run and watch the tests.

@@ -21,4 +21,4 @@ docs/RESULTS.md                 what was actually executed
 ```
 
 
-Chrome opens visibly by default (`headless=false`). With the local frontend running, use `mvn test` to watch the tests. Optional headless execution: `mvn test -Dheadless=true`.
+Chrome opens visibly for every test. With the local frontend running, use `mvn test` to watch the tests.

@@ -35,9 +35,6 @@ public class BaseClass {
             throw new IllegalArgumentException("baseUrl must be a local http://localhost or http://127.0.0.1 URL");
         }
         ChromeOptions options = new ChromeOptions();
-        if (Boolean.parseBoolean(System.getProperty("headless", config.getProperty("headless")))) {
-            options.addArguments("--headless=new");
-        }
         options.addArguments("--window-size=1440,1000");
         driver = new ChromeDriver(options); // Selenium Manager finds the matching driver.
         wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(config.getProperty("waitSeconds"))));

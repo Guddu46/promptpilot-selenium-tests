@@ -1,10 +1,5 @@
-# Verification results
 
-## Visible Chrome run (current default)
 
-On **11 October 2026, 20:39 IST**, `mvn test` with `headless=false` passed **14 tests, 0 failures, 0 errors, 0 skipped** in visible Chrome. Test duration: 31.97 seconds; Maven total: 35.760 seconds. The environment and application revision match the original run below. The first visible run exposed a React navigation race (13 passed, 1 failed): the URL updated before the heading. Explicit waits for the destination heading were added to both auth-page link tests before the successful full rerun. `execution-summary.csv` now records this visible run. Eclipse and other browsers remain untested.
-
-## Original headless run
 
 Executed on **11 October 2026, 18:34 IST** against the actual local PromptPilot React frontend at application commit `9624e5b0c5089aa3e1ec285d88f188d6d80f5ca4`.
 
